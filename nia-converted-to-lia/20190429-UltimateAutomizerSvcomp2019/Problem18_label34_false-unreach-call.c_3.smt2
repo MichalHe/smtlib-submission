@@ -1,0 +1,51 @@
+(set-logic LIA)
+(set-info :license "https://creativecommons.org/licenses/by/4.0/")
+(set-info :status "unknown")
+(set-info :smt-lib-version "2.6")
+(declare-fun c_old(~a3~0) () Int)
+(declare-fun c_~a3~0 () Int)
+(assert
+  (and
+    (<= (+ (* (- 1) c_old(~a3~0)) (* 1 c_~a3~0)) 0)
+    (not
+      (or
+        (exists ((v_~a3~0_2177 Int) (quotient_0 Int))
+          (and
+            (<= (* (- 1) v_~a3~0_2177) (- 210150))
+            (<= (+ (* 1 c_~a3~0) (* (- 1) quotient_0)) 219839)
+            (<= (+ (* (- 1) c_old(~a3~0)) (* 1 v_~a3~0_2177)) 0)
+            (<= (+ (* (- 1) v_~a3~0_2177) (* 5 quotient_0)) (- 210150))
+            (<= (+ (* 1 v_~a3~0_2177) (* (- 5) quotient_0)) 210154)
+          )
+        )
+        (exists ((v_prenex_2 Int) (reminder_1 Int) (quotient_2 Int))
+          (and
+            (= (* 1 reminder_1) 0)
+            (<= (+ (* (- 1) c_old(~a3~0)) (* 1 v_prenex_2)) 0)
+            (<= (+ (* 1 c_~a3~0) (* (- 1) quotient_2)) 219839)
+            (<= (+ (* (- 1) v_prenex_2) (* 5 reminder_1)) 0)
+            (<= (+ (* 1 v_prenex_2) (* (- 5) reminder_1)) 4)
+            (<= (+ (* (- 1) v_prenex_2) (* 5 quotient_2)) (- 210150))
+            (<= (+ (* 1 v_prenex_2) (* (- 5) quotient_2)) 210154)
+          )
+        )
+        (exists ((v_prenex_1 Int) (reminder_3 Int) (quotient_4 Int))
+          (and
+            (<= (* 1 v_prenex_1) 210149)
+            (not
+              (= (* 1 reminder_3) 0)
+            )
+            (<= (+ (* 1 c_~a3~0) (* (- 1) quotient_4)) 219840)
+            (<= (+ (* (- 1) c_old(~a3~0)) (* 1 v_prenex_1)) 0)
+            (<= (+ (* (- 1) v_prenex_1) (* 5 reminder_3)) 0)
+            (<= (+ (* 1 v_prenex_1) (* (- 5) reminder_3)) 4)
+            (<= (+ (* (- 1) v_prenex_1) (* 5 quotient_4)) (- 210150))
+            (<= (+ (* 1 v_prenex_1) (* (- 5) quotient_4)) 210154)
+          )
+        )
+      )
+    )
+  )
+)
+(check-sat)
+

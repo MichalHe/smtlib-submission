@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/home/codeboy/work/amaya/run-amaya.py", line 770, in <module>
+    run_successful = running_modes_procedure_table[runner_mode](args)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/run-amaya.py", line 743, in convert_smt_to_other_format
+    formula_to_emit, var_table = preprocess_ast(formula_to_emit, global_fn_symbols=fn_symbols)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/__init__.py", line 346, in preprocess_ast
+    evaluable_ast, var_table = convert_ast_into_evaluable_form(ast, global_fn_symbols)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 821, in convert_ast_into_evaluable_form
+    new_ast, new_ast_info = _convert_ast_into_evaluable_form(ast, dep_graph, bool_vars, scoper)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 734, in _convert_ast_into_evaluable_form
+    new_child, child_tree_info = _convert_ast_into_evaluable_form(child, dep_graph, bool_vars, scoper)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 734, in _convert_ast_into_evaluable_form
+    new_child, child_tree_info = _convert_ast_into_evaluable_form(child, dep_graph, bool_vars, scoper)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 740, in _convert_ast_into_evaluable_form
+    child, child_ast_info = _convert_ast_into_evaluable_form(ast[1], dep_graph, bool_vars, scoper)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 751, in _convert_ast_into_evaluable_form
+    child, child_ast_info = _convert_ast_into_evaluable_form(ast[2], dep_graph, bool_vars, scoper)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 740, in _convert_ast_into_evaluable_form
+    child, child_ast_info = _convert_ast_into_evaluable_form(ast[1], dep_graph, bool_vars, scoper)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 734, in _convert_ast_into_evaluable_form
+    new_child, child_tree_info = _convert_ast_into_evaluable_form(child, dep_graph, bool_vars, scoper)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 803, in _convert_ast_into_evaluable_form
+    return convert_relation_to_evaluable_form(ast, dep_graph, scoper)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 362, in convert_relation_to_evaluable_form
+    lhs, _, lhs_support = normalize_expr(ast[1], dep_graph, scoper)  # Will remove nonlinear terms and replace them with new variables
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 301, in normalize_expr
+    lin_term, dependent_terms, support = normalize_expr(ast[1], nonlinear_term_graph, scoper)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 295, in normalize_expr
+    left = reduction(left, operand)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codeboy/work/amaya/amaya/preprocessing/eval.py", line 259, in __mul__
+    raise NonlinearArithmeticError(f'Attempting to multiply two Expressions containing variables {lin_expr} * {const_expr}')
+amaya.preprocessing.eval.NonlinearArithmeticError: Attempting to multiply two Expressions containing variables Expr(constant_term=1, linear_terms={Var(id=2): 1}) * Expr(constant_term=0, linear_terms={Var(id=2): 1})

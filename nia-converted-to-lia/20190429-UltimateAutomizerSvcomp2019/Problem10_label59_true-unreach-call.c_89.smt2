@@ -1,0 +1,77 @@
+(set-logic LIA)
+(set-info :license "https://creativecommons.org/licenses/by/4.0/")
+(set-info :status "unknown")
+(set-info :smt-lib-version "2.6")
+(declare-fun c_calculate_output_#in~input () Int)
+(declare-fun c_calculate_output_#res () Int)
+(declare-fun c_main_#t~ret3_primed () Int)
+(declare-fun c_main_~input~0_Hier () Int)
+(declare-fun c_old(~a10~0) () Int)
+(declare-fun c_old(~a19~0) () Int)
+(declare-fun c_old(~a1~0) () Int)
+(declare-fun c_old(~a1~0)_Hier () Int)
+(declare-fun c_~a10~0 () Int)
+(declare-fun c_~a10~0_Hier () Int)
+(declare-fun c_~a19~0_Hier () Int)
+(declare-fun c_~a1~0 () Int)
+(declare-fun c_~a1~0_Hier () Int)
+(assert
+  (and
+    (= (+ (* (- 1) c_calculate_output_#res) (* 1 c_main_#t~ret3_primed)) 0)
+    (and
+      (= (+ (* 1 c_old(~a1~0)) (* (- 1) c_~a1~0_Hier)) 0)
+      (= (+ (* 1 c_old(~a10~0)) (* (- 1) c_~a10~0_Hier)) 0)
+      (= (+ (* 1 c_old(~a19~0)) (* (- 1) c_~a19~0_Hier)) 0)
+    )
+    (= (+ (* 1 c_calculate_output_#in~input) (* (- 1) c_main_~input~0_Hier)) 0)
+    (and
+      (<= (* (- 1) c_~a10~0) (- 3))
+      (exists ((v_~a1~0_483 Int) (reminder_0 Int))
+        (and
+          (<= (* (- 1) v_~a1~0_483) 0)
+          (<= (+ (* 1 c_old(~a1~0)) (* (- 1) v_~a1~0_483)) 0)
+          (<= (+ (* (- 1) c_~a1~0) (* 1 reminder_0)) 300007)
+          (<= (+ (* (- 1) v_~a1~0_483) (* 299993 reminder_0)) 0)
+          (<= (+ (* 1 v_~a1~0_483) (* (- 299993) reminder_0)) 299992)
+        )
+      )
+    )
+    (and
+      (<= (* (- 1) c_~a10~0_Hier) (- 3))
+      (<= (* (- 1) c_~a1~0_Hier) 12)
+    )
+    (not
+      (or
+        (and
+          (<= (* (- 1) c_~a10~0) (- 3))
+          (exists ((v_~a1~0_483 Int) (reminder_1 Int))
+            (and
+              (<= (* 1 v_~a1~0_483) (- 1))
+              (<= (+ (* 1 c_old(~a1~0)_Hier) (* (- 1) v_~a1~0_483)) 0)
+              (<= (+ (* (- 1) c_~a1~0) (* 1 reminder_1)) 600000)
+              (not
+                (= (* 1 reminder_1) 0)
+              )
+              (<= (+ (* (- 1) v_~a1~0_483) (* 299993 reminder_1)) 0)
+              (<= (+ (* 1 v_~a1~0_483) (* (- 299993) reminder_1)) 299992)
+            )
+          )
+        )
+        (and
+          (<= (* (- 1) c_~a10~0) (- 3))
+          (exists ((v_~a1~0_483 Int) (reminder_2 Int))
+            (and
+              (<= (* (- 1) v_~a1~0_483) 0)
+              (<= (+ (* 1 c_old(~a1~0)_Hier) (* (- 1) v_~a1~0_483)) 0)
+              (<= (+ (* (- 1) c_~a1~0) (* 1 reminder_2)) 300007)
+              (<= (+ (* (- 1) v_~a1~0_483) (* 299993 reminder_2)) 0)
+              (<= (+ (* 1 v_~a1~0_483) (* (- 299993) reminder_2)) 299992)
+            )
+          )
+        )
+      )
+    )
+  )
+)
+(check-sat)
+

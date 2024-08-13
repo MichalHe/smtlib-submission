@@ -1,0 +1,36 @@
+(set-logic LIA)
+(set-info :license "https://creativecommons.org/licenses/by/4.0/")
+(set-info :status "unsat")
+(set-info :smt-lib-version "2.6")
+(declare-fun c_main_#t~nondet0 () Int)
+(declare-fun c_main_#t~nondet1 () Int)
+(declare-fun c_main_#t~nondet2 () Int)
+(declare-fun c_main_~x~0 () Int)
+(declare-fun c_main_~x~0_primed () Int)
+(declare-fun c_main_~y~0 () Int)
+(declare-fun c_main_~y~0_primed () Int)
+(declare-fun c_main_~z~0 () Int)
+(declare-fun c_main_~z~0_primed () Int)
+(assert
+  (and
+    (and
+      (= (+ (* (- 4) c_main_#t~nondet1) (* (- 1) c_main_~y~0) (* 1 c_main_~y~0_primed)) 0)
+      (= (+ (* (- 8) c_main_#t~nondet2) (* (- 1) c_main_~z~0) (* 1 c_main_~z~0_primed)) 0)
+      (= (+ (* (- 2) c_main_#t~nondet0) (* (- 1) c_main_~x~0) (* 1 c_main_~x~0_primed)) 0)
+    )
+    (and
+      (= (* 1 c_main_~y~0) 0)
+      (= (* 1 c_main_~x~0) 0)
+      (= (* 1 c_main_~z~0) 0)
+    )
+    (exists ((main_#t~nondet0 Int) (main_#t~nondet1 Int) (main_#t~nondet2 Int) (reminder_0 Int))
+      (and
+        (= (* 1 reminder_0) 4)
+        (<= (+ (* (- 4) c_main_~x~0_primed) (* (- 2) c_main_~y~0_primed) (* (- 1) c_main_~z~0_primed) (* (- 8) main_#t~nondet0) (* (- 8) main_#t~nondet1) (* (- 8) main_#t~nondet2) (* 4294967296 reminder_0)) 0)
+        (<= (+ (* 4 c_main_~x~0_primed) (* 2 c_main_~y~0_primed) (* 1 c_main_~z~0_primed) (* 8 main_#t~nondet0) (* 8 main_#t~nondet1) (* 8 main_#t~nondet2) (* (- 4294967296) reminder_0)) 4294967295)
+      )
+    )
+  )
+)
+(check-sat)
+
